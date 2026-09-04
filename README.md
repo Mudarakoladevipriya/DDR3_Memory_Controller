@@ -52,7 +52,7 @@ The top-level module integrates the following modules:
                     | DDR3 Memory    |
                     | Model          |
                     +----------------+
-
+---
 ## Test Cases
 
 The following test cases were used to verify the simplified DDR3 Memory Controller:
