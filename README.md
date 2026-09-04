@@ -46,8 +46,12 @@ The top-level module integrates the following modules:
                     | Refresh        |
                     | Controller     |
                     +----------------+
-
-
+                            |
+                            v
+                    +----------------+
+                    | DDR3 Memory    |
+                    | Model          |
+                    +----------------+
 
 ## Test Cases
 
@@ -79,9 +83,6 @@ PASS COUNT = 3
 FAIL COUNT = 0
 
 ALL TESTS PASSED
-                            |
-                            v
-                    +----------------+
-                    | DDR3 Memory    |
-                    | Model          |
-                    +----------------+
+
+
+
