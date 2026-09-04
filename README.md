@@ -46,6 +46,39 @@ The top-level module integrates the following modules:
                     | Refresh        |
                     | Controller     |
                     +----------------+
+
+
+
+## Test Cases
+
+The following test cases were used to verify the simplified DDR3 Memory Controller:
+
+| Test Case | Operation | Address | Data | Expected Result |
+|-----------|-----------|---------|------|-----------------|
+| Test 1 | Write and Read | `0x00000001` | `0x12345678` | Read data should match `0x12345678` |
+| Test 2 | Write and Read | `0x00000002` | `0xA5A55A5A` | Read data should match `0xA5A55A5A` |
+| Test 3 | Write and Read | `0x00000003` | `0xDEADBEEF` | Read data should match `0xDEADBEEF` |
+| Test 4 | Refresh Test | — | — | Periodic refresh commands should be generated and detected |
+
+### Simulation Results
+
+```text
+WRITE COMPLETE: Address=00000001 Data=12345678
+READ PASS: Address=00000001 Expected=12345678 Actual=12345678
+
+WRITE COMPLETE: Address=00000002 Data=a5a55a5a
+READ PASS: Address=00000002 Expected=a5a55a5a Actual=a5a55a5a
+
+WRITE COMPLETE: Address=00000003 Data=deadbeef
+READ PASS: Address=00000003 Expected=deadbeef Actual=deadbeef
+
+REFRESH COUNT = 3
+REFRESH TEST PASSED
+
+PASS COUNT = 3
+FAIL COUNT = 0
+
+ALL TESTS PASSED
                             |
                             v
                     +----------------+
